@@ -23,31 +23,37 @@
 
     <!-- Style for Full-Screen Image and Responsiveness -->
     <style>
-        /* Remove default margin/padding and allow scrolling */
+        /* Remove default margin/padding */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow-y: auto; /* Enable vertical scrolling */
+            overflow: hidden; /* Prevent scroll on mobile */
         }
 
-        /* Style for the image */
-        .scrollable-image {
+        /* Full-screen image on mobile */
+        .fullscreen-image {
             width: 100%;
-            height: auto; /* Allow the height to scale proportionally */
-            display: block; /* Ensure the image is a block element */
+            height: 100vh; /* Takes full height of the viewport */
+            object-fit: cover;
+            display: block; /* Ensure the image behaves like a block element */
         }
 
-        /* Ensure the image stays centered on smaller screens */
-        @media (max-width: 768px) {
-            .scrollable-image {
-                object-position: center; /* Keeps the image centered */
+        /* For Desktop: Allow scrolling and maintain aspect ratio */
+        @media (min-width: 769px) {
+            body {
+                overflow-y: auto; /* Enable scrolling on desktop */
+            }
+
+            .fullscreen-image {
+                height: auto; /* Let the image scale naturally */
+                min-height: 100vh; /* Ensure image always covers the screen */
             }
         }
     </style>
 </head>
 <body>
-    <!-- Scrollable Image -->
-    <img src="trois-vingt-home.jpg" alt="Trois Vingt Home" class="scrollable-image">
+    <!-- Full-Screen Image -->
+    <img src="trois-vingt-home.jpg" alt="Trois Vingt Home" class="fullscreen-image">
 </body>
 </html>
