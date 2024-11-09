@@ -4,12 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trois Vingt</title>
+    
+    <!-- Favicon Icons -->
     <link rel="icon" href="favicon1.png" sizes="16x16" type="image/png">
     <link rel="icon" href="favicon1-32x32.png" sizes="32x32" type="image/png">
     <link rel="icon" href="favicon1-96x96.png" sizes="96x96" type="image/png">
 
+    <!-- Open Graph Meta Tags (For Link Previews on Social Media and Messaging Apps) -->
+    <meta property="og:title" content="Trois Vingt" />
+    <meta property="og:description" content="Explore our luxury streetwear brand." />
+    <meta property="og:image" content="https://troisvingt.com/images/social-preview.jpg" />
+    <meta property="og:url" content="https://troisvingt.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Trois Vingt">
+    <meta name="twitter:description" content="Explore our luxury streetwear brand.">
+    <meta name="twitter:image" content="https://troisvingt.com/images/social-preview.jpg">
+
+    <!-- Style for Full-Screen Image and Responsiveness -->
+    <style>
+        /* Remove default margin/padding */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        /* Center image in the middle of the page and make it cover the screen */
+        .fullscreen-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This ensures the image covers the entire screen without distortion */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Ensure the image stays centered on smaller screens */
+        @media (max-width: 768px) {
+            .fullscreen-image {
+                object-position: center; /* Keeps the image centered */
+            }
+        }
+    </style>
 </head>
-<body style="margin: 0; display: flex; align-items: center; justify-content: center; height: 100vh;">
-    <img src="trois-vingt-home.jpg" alt="Image">
+<body>
+    <!-- Full-Screen Image -->
+    <img src="trois-vingt-home.jpg" alt="Trois Vingt Home" class="fullscreen-image">
 </body>
 </html>
